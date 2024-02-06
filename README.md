@@ -1,3 +1,5 @@
+## Ansible on Ubuntu Container
+
 ### build ansible container 
 
 docker build -t anibale/ansible-ubuntu:2.12.0 .
@@ -11,9 +13,9 @@ docker run -it --rm \
 
 ### run container and interact
 > ejecutar lo siguiente de acuerdo a donde se usarán los playbooks
-docker run -it --rm \
+```docker run -it --rm \
   -v ${PWD}:/ansible \
-  anibale/ansible-ubuntu:2.12.0 bash
+  anibale/ansible-ubuntu:2.12.0 bash```
 
 ### run playbook on ansible
 ansible-playbook docker_example.yml -l servers -i inventory -kK
