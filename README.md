@@ -22,7 +22,9 @@ docker run -it --rm \
 ```
 
 ### run playbook on ansible
+```
 ansible-playbook docker_example.yml -l servers -i inventory -kK
+```
 
 ### fixes 
 *   > Ansible provisioning ERROR! Using a SSH password instead of a key is not possible
