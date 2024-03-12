@@ -11,6 +11,12 @@ docker run -it --rm \
   anibale/ansible-ubuntu:2.12.0 \
   ansible servers -m ping -i inventory  
 ```
+```
+docker run -it --rm \
+  -v ${PWD}:/ansible \
+  anibale/ansible-ubuntu:2.12.0 \
+  -c "ansible servers -m ping -i inventory"  
+```
 
 ### run container and interact
 > ejecutar lo siguiente de acuerdo a donde se usarán los playbooks
@@ -23,7 +29,10 @@ docker run -it --rm \
 
 ### run playbook on ansible
 ```
-ansible-playbook docker_example.yml -l servers -i inventory -kK
+docker run -it --rm \
+  -v ${PWD}:/ansible \
+  anibale/ansible-ubuntu:2.12.0 \
+  -c "ansible-playbook docker_example.yml -l servers -i inventory"
 ```
 
 ### fixes 
